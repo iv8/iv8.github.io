@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="Csooo 的博客">
 <meta property="og:description" content="本篇教程仅适用与个人用户使用 30M云 提供的服务配合指定后端使用，如果您无法正常使用请仔细看完该教程。 请不要多复制少复制加空格，谢谢各位大佬！！！！！">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-25T14:27:05.280Z">
+<meta property="og:updated_time" content="2019-02-25T14:32:32.861Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="个人用户如何使用 DNS 服务解锁 Netflix(SS)">
 <meta name="twitter:description" content="本篇教程仅适用与个人用户使用 30M云 提供的服务配合指定后端使用，如果您无法正常使用请仔细看完该教程。 请不要多复制少复制加空格，谢谢各位大佬！！！！！">
@@ -370,7 +370,7 @@
                 
               
 
-              <time title="Created: 2019-02-25 20:48:36 / Modified: 22:27:05" itemprop="dateCreated datePublished" datetime="2019-02-25T20:48:36+08:00">2019-02-25</time>
+              <time title="Created: 2019-02-25 20:48:36 / Modified: 22:32:32" itemprop="dateCreated datePublished" datetime="2019-02-25T20:48:36+08:00">2019-02-25</time>
             
 
             
@@ -455,7 +455,7 @@
 <h4 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get update -y</span><br></pre></td></tr></table></figure>
 <h4 id="安装-Docker"><a href="#安装-Docker" class="headerlink" title="安装 Docker"></a>安装 Docker</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://get.docker.com/ | sh</span><br></pre></td></tr></table></figure>
 <h4 id="进程守护"><a href="#进程守护" class="headerlink" title="进程守护"></a>进程守护</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start docker &amp;&amp; systemctl <span class="built_in">enable</span> docker</span><br></pre></td></tr></table></figure>
-<h4 id="配置参数"><a href="#配置参数" class="headerlink" title="配置参数"></a>配置参数</h4><p>需要配置的值为 <code>password, method, protocol, obfs, obfs_param</code> 其他参数仅供有能力者修改</p>
+<h4 id="配置参数"><a href="#配置参数" class="headerlink" title="配置参数"></a>配置参数</h4><p>需要配置的值为 <code>password, method</code> 其他参数仅供有能力者修改</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'&#123;</span></span><br><span class="line"><span class="string">    "server": "0.0.0.0",</span></span><br><span class="line"><span class="string">    "server_ipv6": "::",</span></span><br><span class="line"><span class="string">    "server_port": 8388,</span></span><br><span class="line"><span class="string">    "local_address": "127.0.0.1",</span></span><br><span class="line"><span class="string">    "local_port": 1080,</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    "password": "30m",</span></span><br><span class="line"><span class="string">    "timeout": 120,</span></span><br><span class="line"><span class="string">    "udp_timeout": 60,</span></span><br><span class="line"><span class="string">    "method": "chacha20",</span></span><br><span class="line"><span class="string">    "fast_open": false</span></span><br><span class="line"><span class="string">&#125;'</span> &gt; config.json</span><br></pre></td></tr></table></figure>
 <p>如果您是从 Python 教程来到此处，请点击 <a href="#授权">返回</a></p>
 <h4 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h4><blockquote>
