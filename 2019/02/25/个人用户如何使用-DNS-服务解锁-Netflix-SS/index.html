@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="Csooo 的博客">
 <meta property="og:description" content="本篇教程仅适用与个人用户使用 30M云 提供的服务配合指定后端使用，如果您无法正常使用请仔细看完该教程。 请不要多复制少复制加空格，谢谢各位大佬！！！！！">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-25T14:32:32.861Z">
+<meta property="og:updated_time" content="2019-02-25T14:38:21.418Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="个人用户如何使用 DNS 服务解锁 Netflix(SS)">
 <meta name="twitter:description" content="本篇教程仅适用与个人用户使用 30M云 提供的服务配合指定后端使用，如果您无法正常使用请仔细看完该教程。 请不要多复制少复制加空格，谢谢各位大佬！！！！！">
@@ -370,7 +370,7 @@
                 
               
 
-              <time title="Created: 2019-02-25 20:48:36 / Modified: 22:32:32" itemprop="dateCreated datePublished" datetime="2019-02-25T20:48:36+08:00">2019-02-25</time>
+              <time title="Created: 2019-02-25 20:48:36 / Modified: 22:38:21" itemprop="dateCreated datePublished" datetime="2019-02-25T20:48:36+08:00">2019-02-25</time>
             
 
             
@@ -480,7 +480,7 @@
 <h4 id="运行测试"><a href="#运行测试" class="headerlink" title="运行测试"></a>运行测试</h4><p>如果没有异常显示或者报错并且连接正常，就可以进行下一步</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python shadowsocks/server.py -c config.json</span><br></pre></td></tr></table></figure>
 <h4 id="守护进程"><a href="#守护进程" class="headerlink" title="守护进程"></a>守护进程</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"[Unit]</span></span><br><span class="line"><span class="string">Description=ss deamon</span></span><br><span class="line"><span class="string">After=rc-local.service</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">[Service]</span></span><br><span class="line"><span class="string">Type=simple</span></span><br><span class="line"><span class="string">User=root</span></span><br><span class="line"><span class="string">Group=root</span></span><br><span class="line"><span class="string">WorkingDirectory=/root/ss</span></span><br><span class="line"><span class="string">ExecStart=/usr/bin/python shadowsocks/server.py -c config.json</span></span><br><span class="line"><span class="string">Restart=always</span></span><br><span class="line"><span class="string">LimitNOFILE=512000</span></span><br><span class="line"><span class="string">[Install]</span></span><br><span class="line"><span class="string">WantedBy=multi-user.target"</span> &gt; /etc/systemd/system/ss.service</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"sshd: ALL"</span> &gt; /etc/hosts.allow &amp;&amp; systemctl start ss &amp;&amp; systemctl <span class="built_in">enable</span> ss</span><br></pre></td></tr></table></figure>
-<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><p>如果您看完此篇文章，依旧无法解决，请联系 <a href="tg://resolve?domain=csooo" target="_blank" rel="noopener">Telegram</a> 说明来由并打款 20 元，只负责配置，不负责教学。</p>
+<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><p>如果您看完此篇文章，依旧无法解决，请联系 <a href="tg://resolve?domain=csooo" target="_blank" rel="noopener">Telegram</a> 说明来由并打款 50 元，只负责配置，不负责教学。</p>
 <blockquote>
 <p>温馨提示：如果您想参与评论，请确保您可以访问国际网络</p>
 </blockquote>
