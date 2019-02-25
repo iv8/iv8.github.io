@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="Csooo 的博客">
 <meta property="og:description" content="本篇教程仅适用与个人用户使用 30M云 提供的服务配合指定后端使用，如果您无法正常使用请仔细看完该教程。 请不要多复制少复制加空格，谢谢各位大佬！！！！！">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-25T15:42:46.362Z">
+<meta property="og:updated_time" content="2019-02-25T16:07:27.333Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="个人用户如何使用 DNS 服务解锁 Netflix(SSR)">
 <meta name="twitter:description" content="本篇教程仅适用与个人用户使用 30M云 提供的服务配合指定后端使用，如果您无法正常使用请仔细看完该教程。 请不要多复制少复制加空格，谢谢各位大佬！！！！！">
@@ -370,12 +370,24 @@
                 
               
 
-              <time title="Created: 2019-02-25 22:49:25 / Modified: 23:42:46" itemprop="dateCreated datePublished" datetime="2019-02-25T22:49:25+08:00">2019-02-25</time>
+              <time title="Created: 2019-02-25 22:49:25" itemprop="dateCreated datePublished" datetime="2019-02-25T22:49:25+08:00">2019-02-25</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-02-26 00:07:27" itemprop="dateModified" datetime="2019-02-26T00:07:27+08:00">2019-02-26</time>
               
             
           </span>
@@ -462,7 +474,7 @@
 <p>请将下一行命令中的 <code>userkey</code> 替换为产品分配的 <code>key</code></p>
 </blockquote>
 <p><code>d</code> 参数使容器后台运行，<code>name</code> 参数对容器进行命名，<code>p</code> 参数进行端口映射 <code>456</code> 即为你的机器外网映射端口 <code>8388</code> 为上一步操作的 <code>server_port</code>，<code>restart</code> 参数值为 <code>always</code> 时意义为当容器停止时自动重启容器，可选值 <code>always, no, unless-stopped, on-failure[:max-retries]</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name=ssr --restart=always -p 456:8338 -e KEY=userkey -v `<span class="built_in">pwd</span>`/config.json:/root/shadowsocksr/config.json i0923/ssr</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name=ssr --restart=always -p 456:8389 -e KEY=userkey -v `<span class="built_in">pwd</span>`/config.json:/root/shadowsocksr/config.json i0923/ssr</span><br></pre></td></tr></table></figure>
 <h4 id="完成安装"><a href="#完成安装" class="headerlink" title="完成安装"></a>完成安装</h4><p>至此，shadowsocksr Docker 版本已经成功安装到您的 VPS 。</p>
 <blockquote>
 <p>常用命令 docker [stop| start| restart| rm] ssr</p>
