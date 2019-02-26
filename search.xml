@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[个人用户如何使用 DNS 服务解锁 Netflix(SSR)]]></title>
+    <url>%2F2019%2F02%2F25%2F%E4%B8%AA%E4%BA%BA%E7%94%A8%E6%88%B7%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-DNS-%E6%9C%8D%E5%8A%A1%E8%A7%A3%E9%94%81-Netflix-SSR%2F</url>
+    <content type="text"><![CDATA[本篇教程仅适用与个人用户使用 30M云 提供的服务配合指定后端使用，如果您无法正常使用请仔细看完该教程。 请不要多复制少复制加空格，谢谢各位大佬！！！！！ 仓库地址 https://github.com/iv8/ssr/ https://hub.docker.com/r/i0923/ssr 安装教程 此处命令默认为 Ubuntu 系统，其他系统请更换为相对应等价命令 Docker 不建议内存低于 512Mb 的机器使用，需要使用 Python 请 点击 更新1apt-get update -y 安装 Docker1curl -fsSL https://get.docker.com/ | sh 进程守护1systemctl start docker &amp;&amp; systemctl enable docker 配置参数需要配置的值为 password, method, protocol, obfs, obfs_param 其他参数仅供有能力者修改 1234567891011121314151617181920212223echo '&#123; "server": "0.0.0.0", "server_ipv6": "::", "server_port": 8389, "local_address": "127.0.0.1", "local_port": 1080, "password": "30m", "timeout": 120, "udp_timeout": 60, "method": "chacha20", "protocol": "auth_sha1_v4", "obfs": "http_simple", "obfs_param": "HK2SCH13006913.wns.windows.com", "speed_limit_per_con": 0, "dns_ipv6": false, "connect_verbose_info": 0, "connect_hex_data": 0, "redirect": "", "fast_open": false, "friendly_detect": 1&#125;' &gt; config.json 如果您是从 Python 教程来到此处，请点击 返回 运行 请将下一行命令中的 userkey 替换为产品分配的 key如果您购买的产品是香港并且有观看 TVB 的需求，请将 Docker 容器的 tag 替换为 hk d 参数使容器后台运行，name 参数对容器进行命名，p 参数进行端口映射 456 即为你的机器外网映射端口 8389 为上一步操作的 server_port，restart 参数值为 always 时意义为当容器停止时自动重启容器，可选值 always, no, unless-stopped, on-failure[:max-retries] 1docker run -d --name=ssr --restart=always -p 456:8389 -e KEY=userkey -v `pwd`/config.json:/root/shadowsocksr/config.json i0923/ssr 完成安装至此，shadowsocksr Docker 版本已经成功安装到您的 VPS 。 常用命令 docker [stop| start| restart| rm] ssr Python 如果使用 Python 客户端并使用我提供的进程守护脚本，请不要更改文件下载位置确保其位于 /root/ssr/ 更新1apt-get update -y 配置环境123apt install python-pip git libssl-dev python-dev libffi-dev software-properties-common vim -yadd-apt-repository ppa:ondrej/php -y &amp;&amp; apt update -yapt install libsodium-dev -y 获取源码 如果您购买的产品是香港并且有观看 TVB 的需求，请将下一行代码中的 master 替换为 hk 1cd ~ &amp;&amp; git clone --depth=1 -b master https://github.com/iv8/ssr ssr &amp;&amp; cd ssr 配置参数此处代码与 Docker 配置参数相同，请查看 #配置参数 不再赘述。 授权 请将下一行命令中的 userkey 替换为产品分配的 key 运行结果返回 200, 202 均为成功， 如果返回 511 请检查您的 key 是否有效或者已经分配给其他 IP 地址 1sed -i "s|30mkey|userkey|" 30m.py &amp;&amp; python 30m.py 运行测试如果没有异常显示或者报错并且连接正常，就可以进行下一步 1python shadowsocks/server.py -c /root/ssr/config.json 守护进程123456789101112131415echo "[Unit]Description=ssr deamonAfter=rc-local.service[Service]Type=simpleUser=rootGroup=rootWorkingDirectory=/root/ssrExecStart=/usr/bin/python shadowsocks/server.py -c /root/ssr/config.jsonRestart=alwaysLimitNOFILE=512000[Install]WantedBy=multi-user.target" &gt; /etc/systemd/system/ssr.serviceecho "sshd: ALL" &gt; /etc/hosts.allow &amp;&amp; systemctl start ssr &amp;&amp; systemctl enable ssr 完成安装至此，shadowsocksr Python 版本已经成功安装到您的 VPS 。 常用命令 systemctl [stop| start| enable| disable] ssr 联系方式如果您看完此篇文章，依旧无法解决，请联系 Telegram 说明来由并打款 50 元，只负责配置，不负责教学。 温馨提示：如果您想参与评论，请确保您可以访问国际网络]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>Netflix</tag>
+        <tag>解锁</tag>
+        <tag>DNS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[个人用户如何使用 DNS 服务解锁 Netflix(SS)]]></title>
+    <url>%2F2019%2F02%2F25%2F%E4%B8%AA%E4%BA%BA%E7%94%A8%E6%88%B7%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-DNS-%E6%9C%8D%E5%8A%A1%E8%A7%A3%E9%94%81-Netflix-SS%2F</url>
+    <content type="text"><![CDATA[本篇教程仅适用与个人用户使用 30M云 提供的服务配合指定后端使用，如果您无法正常使用请仔细看完该教程。 请不要多复制少复制加空格，谢谢各位大佬！！！！！ 仓库地址 https://github.com/iv8/ss/ https://hub.docker.com/r/i0923/ss 安装教程 此处命令默认为 Ubuntu 系统，其他系统请更换为相对应等价命令 Docker 不建议内存低于 512Mb 的机器使用，需要使用 Python 请 点击 更新1apt-get update -y 安装 Docker1curl -fsSL https://get.docker.com/ | sh 进程守护1systemctl start docker &amp;&amp; systemctl enable docker 配置参数需要配置的值为 password, method 其他参数仅供有能力者修改 12345678910111213echo '&#123; "server": "0.0.0.0", "server_ipv6": "::", "server_port": 8388, "local_address": "127.0.0.1", "local_port": 1080, "password": "30m", "timeout": 120, "udp_timeout": 60, "method": "chacha20", "fast_open": false&#125;' &gt; config.json 如果您是从 Python 教程来到此处，请点击 返回 运行 请将下一行命令中的 userkey 替换为产品分配的 key如果您购买的产品是香港并且有观看 TVB 的需求，请将 Docker 容器的 tag 替换为 hk d 参数使容器后台运行，name 参数对容器进行命名，p 参数进行端口映射 456 即为你的机器外网映射端口 8388 为上一步操作的 server_port，restart 参数值为 always 时意义为当容器停止时自动重启容器，可选值 always, no, unless-stopped, on-failure[:max-retries] 1docker run -d --name=ss --restart=always -p 456:8388 -e KEY=userkey -v `pwd`/config.json:/root/shadowsocks/config.json i0923/ss 完成安装至此，shadowsocks Docker 版本已经成功安装到您的 VPS 。 常用命令 docker [stop| start| restart| rm] ss Python 如果使用 Python 客户端并使用我提供的进程守护脚本，请不要更改文件下载位置确保其位于 /root/ss/ 更新1apt-get update -y 配置环境123apt install python-pip git libssl-dev python-dev libffi-dev software-properties-common vim -yadd-apt-repository ppa:ondrej/php -y &amp;&amp; apt update -yapt install libsodium-dev -y 获取源码 如果您购买的产品是香港并且有观看 TVB 的需求，请将下一行代码中的 master 替换为 hk 1cd ~ &amp;&amp; git clone --depth=1 -b master https://github.com/iv8/ss ss &amp;&amp; cd ss 配置参数此处代码与 Docker 配置参数相同，请查看 #配置参数 不再赘述。 授权 请将下一行命令中的 userkey 替换为产品分配的 key 运行结果返回 200, 202 均为成功， 如果返回 511 请检查您的 key 是否有效或者已经分配给其他 IP 地址 1sed -i "s|30mkey|userkey|" 30m.py &amp;&amp; python 30m.py 运行测试如果没有异常显示或者报错并且连接正常，就可以进行下一步 1python shadowsocks/server.py -c config.json 守护进程123456789101112131415echo "[Unit]Description=ss deamonAfter=rc-local.service[Service]Type=simpleUser=rootGroup=rootWorkingDirectory=/root/ssExecStart=/usr/bin/python shadowsocks/server.py -c config.jsonRestart=alwaysLimitNOFILE=512000[Install]WantedBy=multi-user.target" &gt; /etc/systemd/system/ss.serviceecho "sshd: ALL" &gt; /etc/hosts.allow &amp;&amp; systemctl start ss &amp;&amp; systemctl enable ss 完成安装至此，shadowsocks Python 版本已经成功安装到您的 VPS 。 常用命令 systemctl [stop| start| enable| disable] ss 联系方式如果您看完此篇文章，依旧无法解决，请联系 Telegram 说明来由并打款 50 元，只负责配置，不负责教学。 温馨提示：如果您想参与评论，请确保您可以访问国际网络]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>Netflix</tag>
+        <tag>解锁</tag>
+        <tag>DNS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2019%2F02%2F25%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
