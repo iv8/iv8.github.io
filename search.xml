@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[你好，吉林]]></title>
     <url>%2F2019%2F03%2F05%2F%E4%BD%A0%E5%A5%BD%EF%BC%8C%E5%90%89%E6%9E%97%2F</url>
-    <content type="text"><![CDATA[我！也想做一只生活博主，美食博主，可惜摄影技术令人着急，点评能力差劲，只有没事水水这样子才能勉强维持生活。接下来的日子，在吉林度过一段时间 :)祝自己诸事顺心console.error("TypeError: Cannot read property '_id' of undefined")]]></content>
+    <content type="text"><![CDATA[我！也想做一只生活博主，美食博主，可惜摄影技术令人着急，点评能力差劲，只有没事水水这样子才能勉强维持生活。接下来的日子，在吉林度过一段时间 :)祝自己诸事顺心var ap=new APlayer({element:document.getElementById("aplayer-qzMivkXn"),narrow:!1,autoplay:!1,showlrc:3,music:{title:"ＷＡＩＴＩＮＧ",author:"ＴＲＡ＄Ｈ",url:"/music/ＴＲＡ＄Ｈ - ＷＡＩＴＩＮＧ.mp3",pic:"/music/meta/517565384.jpg",lrc:"https://blog.30m.cloud/music/meta/517565384.txt"}});window.aplayers||(window.aplayers=[]),window.aplayers.push(ap)]]></content>
       <categories>
         <category>日记</category>
       </categories>
